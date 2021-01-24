@@ -86,6 +86,7 @@ function onControl(controller, control, value)
     end
 end
 
+dofile("fox.lua")
 pipeline = Pipeline.new("present")
 
 should_print_pipeline = false
@@ -96,7 +97,7 @@ function render()
     rend_call_stack(pipeline:rend_calls())
 
     if should_print_pipeline then
-        pipeline:print_lua()
+        pipeline:print_for_bulk()
         should_print_pipeline = false
     end
 end
